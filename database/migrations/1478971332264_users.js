@@ -12,7 +12,7 @@ class UsersTableSchema extends Schema {
       table.string('lastName')
       table.string('email').unique()
       table.string('userName').unique()
-      table.string('password',40).unique()
+      table.string('password',40)
 
 
     })
