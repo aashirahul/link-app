@@ -5,8 +5,13 @@ const Hash = use('Hash')
 
 class UserController {
 
+	* all(request,response){
+		let users = yield User.all()
+		response.status(200).json(users)
+	}
+
 	* signUp(request,response){
-		let data = request.all()
+		let data = request.only('firstName','lastName','email','userName','password')
 		data.password = yield Hash.make(data.password)
 
 		try {

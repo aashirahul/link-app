@@ -19,11 +19,13 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.post('/users','UserController.signUp')
+Route.get('/users','UserController.all')
+Route.post('/users/create','UserController.signUp')
 Route.post('/login','UserController.login')
 
 Route.get('/links','LinkController.read')
-Route.post('/links','LinkController.add')
+Route.post('/links/create','LinkController.add')
 
-
+Route.get('/links/:linkID/comments','CommentController.read')
+Route.post('/links/:linkID/comments/create','CommentController.post')
 
