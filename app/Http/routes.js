@@ -22,3 +22,8 @@ Route.on('/').render('welcome')
 Route.post('/users','UserController.signUp')
 Route.post('/login','UserController.login')
 
+Route.get('/links','LinkController.read')
+Route.post('/links','LinkController.add')
+
+
+
