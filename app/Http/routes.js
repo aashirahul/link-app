@@ -25,7 +25,9 @@ Route.post('/login','UserController.login')
 
 Route.get('/links','LinkController.read')
 Route.post('/links/create','LinkController.add')
+Route.delete('/links/delete','LinkController.remove')
 
-Route.get('/links/:linkID/comments','CommentController.read')
+Route.get('/links/comments','CommentController.read')
 Route.post('/links/:linkID/comments/create','CommentController.post')
+Route.delete('/links/comments/delete','CommentController.remove')
 

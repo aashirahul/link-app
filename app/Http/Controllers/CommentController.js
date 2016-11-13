@@ -24,9 +24,21 @@ class CommentController {
 		data.user_id = user.id
 		let comment = yield Comment.create(data)
 		response.status(200).json(comment)
-
-
 	}
+
+	* remove(request,response){
+		const isLoggedIn = yield request.auth.check()
+		if (!isLoggedIn) {
+  			response.unauthorized({error: 'Your must be loggedin to access this resource.'})
+		}
+		
+		const user = yield request.auth.getUser()
+		let comment = yield Comment.findBy('user_id', user.id)
+		yield comment.delete()
+		response.status(200).send('Comment Removed')
+
+		}
+	
 
 }
 
