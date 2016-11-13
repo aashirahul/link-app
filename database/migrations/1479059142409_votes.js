@@ -12,6 +12,7 @@ class VotesTableSchema extends Schema {
       table.foreign('user_id').references('users.id')
       table.integer('link_id').unsigned()
       table.foreign('link_id').references('links.id')
+      table.unique(['user_id','link_id'])
     })
   }
 

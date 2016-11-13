@@ -21,7 +21,7 @@ class LinkController {
 		const user = yield request.auth.getUser()
 		data.user_id = user.id
 		let link = yield Link.create(data)
-		response.status(200).json(link)
+		response.status(201).json(link)
 
 	}
 

@@ -23,7 +23,7 @@ class CommentController {
 		data.link_id = linkId
 		data.user_id = user.id
 		let comment = yield Comment.create(data)
-		response.status(200).json(comment)
+		response.status(201).json(comment)
 	}
 
 	* remove(request,response){

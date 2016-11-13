@@ -31,3 +31,5 @@ Route.get('/links/comments','CommentController.read')
 Route.post('/links/:linkID/comments/create','CommentController.post')
 Route.delete('/links/comments/delete','CommentController.remove')
 
+Route.post('/links/:linkID/vote','VoteController.addVote')
+

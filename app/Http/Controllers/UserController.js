@@ -16,7 +16,7 @@ class UserController {
 
 		try {
 			let user = yield User.create(data)
-			response.status(200).json(user)
+			response.status(201).json(user)
 		} catch(e) {
 			response.status(400).send("Invalid request. User already exists.")
 		}
@@ -29,7 +29,7 @@ class UserController {
 		  const token = yield request.auth.attempt(data.userName, data.password)
 		  response.status(200).send(token)
 		} catch (e) {
-		  response.unauthorized({error: e.message})
+		  response.send('Invalid Credentials')
 		}
 	}
 }
