@@ -7,7 +7,6 @@
  **POST** : /users/create
 
  Parameter
-
 | Field         | Type          | 
 | ------------- |:-------------:| 
 | firstName     |   string      | 
@@ -22,8 +21,70 @@
  **POST** : /login
 
  Parameter
-
 | Field         | Type          |
 | ------------- |:-------------:|
 |  userName     |   string      |
 |  password     |   string      |
+
+
+### Read Links 
+
+**GET** : /links
+
+
+### Create Links
+
+ **POST** : /links/create
+
+ Header
+| Field         | Type          |
+| ------------- |:-------------:|
+| Authorization |   string      |
+
+
+Parameter
+| Field         | Type          |
+| ------------- |:-------------:|
+|  title        |   string      |
+|destination_url|   string      |
+
+
+### Delete Links
+
+ **POST** : /links/delete
+ Header
+| Field         | Type          |
+| ------------- |:-------------:|
+| Authorization |   string      |
+
+
+### Read Comments 
+
+**GET** : /links/comments
+
+
+### Create Comments
+
+ **POST** : /links/:linkID/comments/create
+
+ Header
+| Field         | Type          |
+| ------------- |:-------------:|
+| Authorization |   string      |
+
+
+Parameter
+| Field         | Type          |
+| ------------- |:-------------:|
+|  comment      |   string      |
+
+
+### Delete Comments
+
+ **POST** : /links/comments/delete
+ Header
+| Field         | Type          |
+| ------------- |:-------------:|
+| Authorization |   string      |
+
+
