@@ -22,71 +22,83 @@
  **POST** : /login
 
  Parameter
- 
+
 | Field         | Type          |
 | ------------- |:-------------:|
 |  userName     |   string      |
 |  password     |   string      |
 
 
-### Read Links 
+### Links
 
+**Read Links**
 **GET** : /links
 
-
-### Create Links
-
- **POST** : /links/create
+**Create Links**
+**POST** : /links/create
 
  Header
+
 | Field         | Type          |
 | ------------- |:-------------:|
 | Authorization |   string      |
 
 
 Parameter
+
 | Field         | Type          |
 | ------------- |:-------------:|
 |  title        |   string      |
 |destination_url|   string      |
 
 
-### Delete Links
 
- **POST** : /links/delete
+**Delete Links**
+**POST** : /links/delete
  Header
+
 | Field         | Type          |
 | ------------- |:-------------:|
 | Authorization |   string      |
 
 
-### Read Comments 
+###Comments 
 
+**Read Comments**
 **GET** : /links/comments
 
-
-### Create Comments
-
- **POST** : /links/:linkID/comments/create
+**Create Comments**
+**POST** : /links/:linkID/comments/create
 
  Header
+
 | Field         | Type          |
 | ------------- |:-------------:|
 | Authorization |   string      |
 
 
 Parameter
+
 | Field         | Type          |
 | ------------- |:-------------:|
 |  comment      |   string      |
 
-
-### Delete Comments
-
- **POST** : /links/comments/delete
+**Delete Comments**
+**POST** : /links/comments/delete
  Header
+
 | Field         | Type          |
 | ------------- |:-------------:|
 | Authorization |   string      |
 
 
+###Votes
+
+**Add Votes**
+**Post**: /links/:linkID/vote
+
+Header
+
+| Field         | Type          |
+| ------------- |:-------------:|
+| Authorization |   string      |
