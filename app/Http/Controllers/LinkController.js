@@ -4,9 +4,10 @@ const Link = use("App/Model/Link")
 class LinkController {
 
 	* read(request,response){
-
-		let readLinks = yield Link.all()
-		response.status(200).json(readLinks)
+		let getvotes = yield Link.query().leftOuterJoin('votes','links.id','votes.link_id').select('links.*').groupBy('votes.link_id')
+							.count('votes.link_id as cnt').orderBy('cnt','desc').orderBy('id','desc').fetch()
+		
+		response.status(200).json(getvotes)
 
 
 	}
