@@ -58,6 +58,7 @@ Parameter
 **Delete Links**
 
 **POST** : /links/:linkID/delete
+
  Header
 
 | Field         | Type          |
@@ -91,6 +92,7 @@ Parameter
 **Delete Comments**
 
 **POST** : /links/:linkID/comments/:commentID/delete
+
  Header
 
 | Field         | Type          |
