@@ -4,17 +4,17 @@
 
 ### Authentication: Sign-UP
 	
-	 **POST** : /users/create
+ **POST** : /users/create
 
-	 Parameter
+ Parameter
 
-	| Field         | Type          | 
-	| ------------- |:-------------:| 
-	| firstName     |   string      | 
-	| lastName      |   string      |   
-	|  email        |   string      | 
-	|  userName     |   string      | 
-	|  password     |   string      |    
+| Field         | Type          | 
+| ------------- |:-------------:| 
+| firstName     |   string      | 
+| lastName      |   string      |
+|  email        |   string      |
+|  userName     |   string      |
+|  password     |   string      |
 
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
