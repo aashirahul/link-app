@@ -31,13 +31,18 @@ class LinkController {
 		if (!isLoggedIn) {
   			response.unauthorized({error: 'Your must be loggedin to access this resource.'})
 		}
-		
+		let linkId = request.param('linkID')
 		const user = yield request.auth.getUser()
-		let link = yield Link.findBy('user_id', user.id)
-		yield link.delete()
-		response.status(200).send('Link Removed')
+		let link = yield Link.findBy('id', linkId)
 
+		if(link.user_id == user.id){
+			yield link.delete()
+			response.status(200).send('Link Removed')
+		} else {
+			response.status(401).send('Cannot delete the Link')
 		}
+
+	}
 
 }
 

@@ -31,13 +31,18 @@ class CommentController {
 		if (!isLoggedIn) {
   			response.unauthorized({error: 'Your must be loggedin to access this resource.'})
 		}
-		
+		let commentId = request.param('commentID')
+		let linkId = request.param('linkID')
 		const user = yield request.auth.getUser()
-		let comment = yield Comment.findBy('user_id', user.id)
-		yield comment.delete()
-		response.status(200).send('Comment Removed')
+		let comment = yield Comment.findBy('id', commentId)
+		if(comment.user_id==user.id && comment.link_id==linkId){
+			yield comment.delete()
+			response.status(200).send('Comment Removed')
 
+		}else {
+			response.status(401).send('Cannot delete the comment')
 		}
+	}
 	
 
 }

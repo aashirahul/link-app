@@ -36,6 +36,7 @@
 **GET** : /links
 
 **Create Links**
+
 **POST** : /links/create
 
  Header
@@ -55,7 +56,8 @@ Parameter
 
 
 **Delete Links**
-**POST** : /links/delete
+
+**POST** : /links/:linkID/delete
  Header
 
 | Field         | Type          |
@@ -66,9 +68,11 @@ Parameter
 ###Comments 
 
 **Read Comments**
+
 **GET** : /links/comments
 
 **Create Comments**
+
 **POST** : /links/:linkID/comments/create
 
  Header
@@ -85,7 +89,8 @@ Parameter
 |  comment      |   string      |
 
 **Delete Comments**
-**POST** : /links/comments/delete
+
+**POST** : /links/:linkID/comments/:commentID/delete
  Header
 
 | Field         | Type          |
@@ -96,6 +101,7 @@ Parameter
 ###Votes
 
 **Add Votes**
+
 **Post**: /links/:linkID/vote
 
 Header
